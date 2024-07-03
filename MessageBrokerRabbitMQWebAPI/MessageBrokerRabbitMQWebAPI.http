@@ -1,0 +1,6 @@
+@MessageBrokerRabbitMQWebAPI_HostAddress = http://localhost:5071
+
+GET {{MessageBrokerRabbitMQWebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
