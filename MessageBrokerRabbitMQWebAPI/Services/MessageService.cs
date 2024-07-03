@@ -21,14 +21,14 @@ namespace MessageBrokerRabbitMQWebAPI.Services
 
             using var channel = connection.CreateModel();
 
-            channel.QueueDeclare("Registration1",durable:true,exclusive:true);
+            channel.QueueDeclare("Registration1",false,false,false,null);
 
             var jsonstring=JsonSerializer.Serialize(message);
 
             var body=Encoding.UTF8.GetBytes(jsonstring);
 
 
-            channel.BasicPublish("", "Registration1",body:body);
+            channel.BasicPublish("", "Registration1",null,body:body);
         }
     }
 }
